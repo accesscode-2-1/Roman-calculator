@@ -9,8 +9,12 @@ package nyc.c4q.ac21.romancalc;
 
 public class Test {
     public static void main(String[] args) {
+        // given will be the completed calculation. It's just a test number right now.
         int given = 950;
+
+        // empty string. A letter will be added to it after the value is deducted from the given int.
         String answer = "";
+
         while (given >= 1000) {
             answer += "M";
             given -= 1000;
