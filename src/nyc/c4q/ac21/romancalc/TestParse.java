@@ -1,40 +1,23 @@
 package nyc.c4q.ac21.romancalc;
-import java.util.Scanner;
+
 /**
- * Code to convert to and from Roman numerals.
+ * Anthony McBride on 3/10/15.
+ * Access Code 2.1
+ * Team 2
+ * Test parse function
  */
-public class RomanNumerals {
-    /**
-     * Formats a number in Roman numerals.
-     * @param value
-     *   The value to format.
-     * @return
-     *   The value in Roman numerals.
-     */
-    static String format(int value) {
-        // TODO: Group 1: Write this function!
-        return "???";
-    }
 
-    /**
-     * Parses a number in Roman numerals.
-     * @param number
-     *   The number to parse.
-     * @return
-     *   The value, or -1 if the number isn't in Roman numerals.
-     */
-    public static int parse(String number) {
-        // TODO: Group 2: Write this function!
-
-        // TODO: Add Roman Numeral to variable "number"!
-        number = ;
+public class TestParse {
+    public static void main(String[] args) {
+        // used "given" string based on group 1's test code.
+        String given = "DCCCXC";
         int currNumber;
         int previousNumber;
         char previousLetter;
         char currentLetter;
         int sum = 0;
         int totalSum = 0;
-        String update = " " + number;
+        String update = " " + given;
 
         //char test = given.charAt(given.length()-1);
         //System.out.println(test);
@@ -43,8 +26,8 @@ public class RomanNumerals {
             currentLetter = update.charAt(i);
             previousLetter = update.charAt(i - 1);
 
-            if (currentLetter == 'M') {
-                currNumber = 1000;
+             if (currentLetter == 'M') {
+                 currNumber = 1000;
             }
             else if (currentLetter == 'D') {
                 currNumber = 500;
@@ -65,8 +48,8 @@ public class RomanNumerals {
                 currNumber = 1;
             }
             else  {
-                currNumber = 0;
-            }
+                 currNumber = 0;
+             }
 
             if (previousLetter == 'M') {
                 previousNumber = 1000;
@@ -94,12 +77,12 @@ public class RomanNumerals {
             }
 
 
-            if (currNumber > previousNumber) {
-                sum = sum + (currNumber - previousNumber);
-                i--;
-            } else if (currNumber <= previousNumber){
-                sum = sum + currNumber;
-            }
+                if (currNumber > previousNumber) {
+                    sum = sum + (currNumber - previousNumber);
+                    i--;
+                } else if (currNumber <= previousNumber){
+                    sum = sum + currNumber;
+                }
 
 
         }
@@ -107,11 +90,6 @@ public class RomanNumerals {
         System.out.println(sum);
 
 
-        return -1;
-    }
 
-    public static void main(String[] argv) {
-        // TODO: Group 3: Write this function!
-        // It should test that format() and parse() work correctly.
     }
 }
