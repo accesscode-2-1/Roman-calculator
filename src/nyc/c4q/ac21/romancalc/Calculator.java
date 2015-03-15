@@ -30,7 +30,47 @@ public class Calculator {
      *   The right operand.
      */
     public static void calculate(String leftNumber, String operation, String rightNumber) {
-        // TODO: Group 3: Write this function!
+        int leftValue = RomanNumerals.parse(leftNumber);
+        if (leftValue == -1) {
+            System.err.println("invalid number: " + leftNumber);
+            return;
+        }
+        int rightValue = RomanNumerals.parse(rightNumber);
+        if (rightValue == -1) {
+            System.err.println("invalid number: " + rightNumber);
+        }
+
+        int result;
+        if (operation.equals("+")) {
+            result = leftValue + rightValue;
+        }
+        else if (operation.equals("-")) {
+            result = leftValue - rightValue;
+        }
+        else if (operation.equals("*")) {
+            result = leftValue * rightValue;
+        }
+        else if (operation.equals("/")) {
+            result = leftValue / rightValue;
+        }
+        else if (operation.equals("%")) {
+            result = leftValue % rightValue;
+        }
+        else if (operation.equals("#")) {
+            result = (leftValue + rightValue) / 2;
+        }
+        else {
+            System.err.println("unknown operation: " + operation);
+            return;
+        }
+
+        if (result < 1)
+            System.out.println("too small");
+        else if (result >= 4000)
+            System.out.println("too large");
+        else {
+            System.out.println(RomanNumerals.format(result));
+        }
     }
 
     /**
